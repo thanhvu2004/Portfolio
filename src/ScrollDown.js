@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./colors.css";
+import "./css/colors.css";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },

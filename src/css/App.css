@@ -59,4 +59,10 @@ h1 {
   height: 50px; /* Half the original height */
 }
 
+#expertise {
+  height: 50vh;
+}
 /* experience */
+#projects {
+  height: 100vh;
+}

@@ -1,13 +1,15 @@
 import {} from "react-bootstrap";
-import vnFlag from "./vn.png";
-import caFlag from "./ca.png";
 import * as motion from "motion/react-client";
 import { useState, useEffect } from "react";
 import Pointer from "./Pointer";
 import Card from "./Card";
 import Scrolldown from "./ScrollDown";
-import "./App.css";
-import "./colors.css";
+import Projects from "./Projects";
+import "./css/App.css";
+import "./css/colors.css";
+import vnFlag from "./assets/vn.png";
+import caFlag from "./assets/ca.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [rotate, setRotate] = useState(-3);
@@ -192,22 +194,87 @@ function App() {
         </div>
       </section>
       <section id="expertise">
-        <motion.h1
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+        <div
           style={{
-            fontSize: "3rem",
-            marginBottom: "2rem",
-            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            marginTop: "auto",
+            marginBottom: "auto",
+            flexDirection: "column",
           }}
         >
-          My Expertise{""}
-          <span style={{ color: "var(--primary)" }}>.</span>
-        </motion.h1>
-        <Card />
+          {" "}
+          <motion.h1
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+            style={{
+              fontSize: "3rem",
+              marginBottom: "2rem",
+              textAlign: "center",
+            }}
+          >
+            My Expertise{""}
+            <span style={{ color: "var(--primary)" }}>.</span>
+          </motion.h1>
+          <Card />
+        </div>
       </section>
-      <section id="projects"></section>
+      <hr />
+      <section id="projects">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            marginTop: "auto",
+            marginBottom: "auto",
+            flexDirection: "column",
+          }}
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+            style={{
+              fontSize: "3rem",
+              marginTop: "2rem",
+              marginBottom: "2rem",
+              textAlign: "center",
+            }}
+          >
+            Past Projects{""}
+            <span style={{ color: "var(--primary)" }}>.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+            style={{
+              fontSize: "1.5rem",
+              marginBottom: "2rem",
+              textAlign: "center",
+            }}
+          >
+            Here are some of my past projects I've worked on. Want to see more? Here's my{" "}
+            <a
+              href="https://github.com/thanhvu2004"
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "var(--primary)" }}
+            >
+              GitHub
+            </a>{""}.
+          </motion.p>
+          <Projects />
+        </div>
+      </section>
+      <section id="prj_wrk_experience"></section>
+      <section id="learnmore"></section>
+      <section id="contact"></section>
       <Pointer />
     </div>
   );

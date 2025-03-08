@@ -1,6 +1,6 @@
 import { frame, motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import "./colors.css";
+import "./css/colors.css";
 
 export default function Drag() {
   const ref = useRef(null);
@@ -79,6 +79,7 @@ const ballStyle = {
   backgroundColor: "var(--fill-color)",
   borderRadius: "50%",
   position: "absolute",
+  zIndex: 1056,
   //pointerEvents: "none",
 };
 
@@ -93,4 +94,4 @@ const backBallStyle = {
   zIndex: -2,
 };
 
-// document.body.style.cursor = "none";
+document.body.style.cursor = "none";

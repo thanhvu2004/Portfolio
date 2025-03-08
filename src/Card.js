@@ -1,4 +1,4 @@
-import "./card.css";
+import "./css/card.css";
 import * as motion from "motion/react-client";
 
 export default function ScrollTriggered() {
@@ -33,7 +33,7 @@ const container = {
   justifyContent: "space-around",
   alignItems: "center",
   margin: "0 auto",
-  maxWidth: "80%",
+  maxWidth: "960px",
 };
 
 const cardContainer = {
@@ -42,6 +42,7 @@ const cardContainer = {
   justifyContent: "center",
   alignItems: "center",
   padding: 20,
+  marginBottom: "2rem",
 };
 
 const card = {
