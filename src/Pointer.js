@@ -38,34 +38,50 @@ function useFollowPointer(ref) {
   const x1 = useSpring(x1Point, springConfig);
   const y1 = useSpring(y1Point, springConfig);
 
+  const updatePosition = (clientX, clientY) => {
+    if (!ref.current) return;
+    const element = ref.current;
+
+    frame.read(() => {
+      const scrollX = window.scrollX;
+      const scrollY = window.scrollY;
+      xPoint.set(
+        clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX - 20
+      );
+      yPoint.set(
+        clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
+      );
+      x1Point.set(
+        clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
+      );
+      y1Point.set(
+        clientY - element.offsetTop - element.offsetHeight / 2 - 90 + scrollY
+      );
+    });
+  };
+
   useEffect(() => {
     if (!ref.current) return;
 
-    const handlePointerMove = ({ clientX, clientY }) => {
-      const element = ref.current;
+    let lastX = window.innerWidth / 2;
+    let lastY = window.innerHeight / 2;
 
-      frame.read(() => {
-        const scrollX = window.scrollX;
-        const scrollY = window.scrollY;
-        xPoint.set(
-          clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX - 20
-        );
-        yPoint.set(
-          clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
-        );
-        x1Point.set(
-          clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
-        );
-        y1Point.set(
-          clientY - element.offsetTop - element.offsetHeight / 2 - 90 + scrollY
-        );
-      });
+    const handlePointerMove = ({ clientX, clientY }) => {
+      lastX = clientX;
+      lastY = clientY;
+      updatePosition(clientX, clientY);
+    };
+
+    const handleScroll = () => {
+      updatePosition(lastX, lastY);
     };
 
     window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [ref, xPoint, yPoint, x1Point, y1Point]);
 
