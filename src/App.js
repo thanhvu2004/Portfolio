@@ -6,12 +6,12 @@ import Pointer from "./Pointer";
 import Card from "./Card";
 import Scrolldown from "./ScrollDown";
 import Projects from "./Projects";
-import "./css/colors.css";
 import vnFlag from "./assets/vn.png";
 import caFlag from "./assets/ca.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Buttons.css";
 import "./css/App.css";
+import "./css/colors.css";
 
 function App() {
   const [rotate, setRotate] = useState(-3);
@@ -352,7 +352,6 @@ function App() {
               color: "var(--background)",
               fontSize: "1.5rem",
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-              position: "relative",
             }}
           >
             Check It Out

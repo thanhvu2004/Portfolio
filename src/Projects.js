@@ -57,11 +57,13 @@ export default function Projects() {
   const handleShow = (project) => {
     setSelectedProject(project);
     setShowModal(true);
+    document.body.style.cursor = "auto";
   };
 
   const handleClose = () => {
     setShowModal(false);
     setSelectedProject(null);
+    document.body.style.cursor = "none";
   };
 
   const importAll = (r) => {

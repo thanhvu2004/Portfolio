@@ -15,11 +15,6 @@
   transform: scale(1.1);
 }
 
-.totop-button {
-  position: sticky;
-  bottom: 20px;
-}
-
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
