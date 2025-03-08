@@ -1,31 +1,25 @@
-@media (prefers-color-scheme: light) {
-    :root {
-      --text: #000000;
-      --background: #fffffa;
-      --primary: #ff7f0f;
-      --secondary: #c89898;
-      --accent: #de6868;
-      --stroke-color: #000000;
-      --fill-color: #000000;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #ffffff;
-      --background: #050500;
-      --primary: #f07000;
-      --secondary: #673838;
-      --accent: #972121;
-      --stroke-color: #ffffff;
-      --fill-color: #ffffff;
-    }
-  }
-
 :root {
-    --linearPrimarySecondary: linear-gradient(#f07000, #5c5542);
-    --linearPrimaryAccent: linear-gradient(#f07000, #972121);
-    --linearSecondaryAccent: linear-gradient(#5c5542, #972121);
-    --radialPrimarySecondary: radial-gradient(#f07000, #5c5542);
-    --radialPrimaryAccent: radial-gradient(#f07000, #972121);
-    --radialSecondaryAccent: radial-gradient(#5c5542, #972121);
+  --text: #000000;
+  --background: #fffffa;
+  --primary: #ff7f0f;
+  --secondary: #c89898;
+  --accent: #de6868;
+  --stroke-color: #000000;
+  --fill-color: #000000;
+  --linearPrimarySecondary: linear-gradient(#f07000, #5c5542);
+  --linearPrimaryAccent: linear-gradient(#f07000, #972121);
+  --linearSecondaryAccent: linear-gradient(#5c5542, #972121);
+  --radialPrimarySecondary: radial-gradient(#f07000, #5c5542);
+  --radialPrimaryAccent: radial-gradient(#f07000, #972121);
+  --radialSecondaryAccent: radial-gradient(#5c5542, #972121);
+}
+
+[data-theme="dark"] {
+  --text: #ffffff;
+  --background: #050500;
+  --primary: #f07000;
+  --secondary: #673838;
+  --accent: #972121;
+  --stroke-color: #ffffff;
+  --fill-color: #ffffff;
 }

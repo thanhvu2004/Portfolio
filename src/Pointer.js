@@ -7,7 +7,6 @@ export default function Drag() {
   const { x, y, x1, y1 } = useFollowPointer(ref);
   const [isTapped, setIsTapped] = useState(false);
 
-
   return (
     <>
       <motion.div style={{ ...backBallStyle, x: x1, y: y1 }} />
@@ -22,7 +21,7 @@ export default function Drag() {
         whileTap={{ scale: 1.5 }}
         onTapStart={() => setIsTapped(true)}
         onTap={() => setIsTapped(false)}
-      />{" "}
+      />
     </>
   );
 }
@@ -49,10 +48,10 @@ function useFollowPointer(ref) {
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
         xPoint.set(
-          clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX
+          clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX - 20
         );
         yPoint.set(
-          clientY - element.offsetTop - element.offsetHeight / 2 + scrollY
+          clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
         );
         x1Point.set(
           clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
@@ -79,7 +78,7 @@ const ballStyle = {
   backgroundColor: "var(--fill-color)",
   borderRadius: "50%",
   position: "absolute",
-  zIndex: 1056,
+  zIndex: 1057,
   //pointerEvents: "none",
 };
 
