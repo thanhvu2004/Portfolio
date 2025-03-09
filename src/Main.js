@@ -11,10 +11,10 @@ import vnFlag from "./assets/vn.png";
 import caFlag from "./assets/ca.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Buttons.css";
-import "./css/App.css";
+import "./css/Main.css";
 import "./css/colors.css";
 
-function App() {
+function Main() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [rotate, setRotate] = useState(-3);
@@ -250,7 +250,15 @@ function App() {
         >
           <AnimatedSVG />
           <motion.div>
-            <motion.p>A BIT ABOUT ME</motion.p>
+            <motion.p
+              style={{
+                fontSize: "1.5rem",
+                color: "var(--text)",
+                fontWeight: "bold",
+              }}
+            >
+              A BIT ABOUT ME<span style={{ color: "var(--primary)" }}>.</span>
+            </motion.p>
             <motion.p>
               I'm a Computer Programming and Analysis student at George Brown
               College with a passion for backend development, software
@@ -260,7 +268,39 @@ function App() {
               curious. Like a tree, I keep growing through every season,
               striving until I can taste the fruits of my hard work.
             </motion.p>
-            <motion.p>Let’s not stop here—scroll for more!</motion.p>
+            <motion.p>
+              Let’s not stop here—scroll for more!{" "}
+              <motion.svg
+                width="16"
+                height="16"
+                fill="var(--primary)"
+                initial={{ y: 10 }}
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+              </motion.svg>
+              <motion.svg
+                width="16"
+                height="16"
+                fill="var(--primary)"
+                initial={{ y: 10 }}
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
+              >
+                <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+              </motion.svg>
+              <motion.svg
+                width="16"
+                height="16"
+                fill="var(--primary)"
+                initial={{ y: 10 }}
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
+              >
+                <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+              </motion.svg>
+            </motion.p>
           </motion.div>
         </motion.div>
       </section>
@@ -532,4 +572,4 @@ const img = {
   borderRadius: 10,
 };
 
-export default App;
+export default Main;
