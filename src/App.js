@@ -1,11 +1,12 @@
 import { Button } from "react-bootstrap";
-import * as motion from "motion/react-client";
-import { useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { FaSun, FaMoon, FaArrowUp } from "react-icons/fa";
-import Pointer from "./Pointer";
-import Card from "./Card";
-import Scrolldown from "./ScrollDown";
-import Projects from "./Projects";
+import Pointer from "./component/Pointer";
+import Card from "./component/Card";
+import Scrolldown from "./component/ScrollDown";
+import Projects from "./component/Projects";
+import AnimatedSVG from "./component/AnimatedWave";
 import vnFlag from "./assets/vn.png";
 import caFlag from "./assets/ca.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,6 +15,8 @@ import "./css/App.css";
 import "./css/colors.css";
 
 function App() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [rotate, setRotate] = useState(-3);
   const [showFirstName, setShowFirstName] = useState(true);
   const [showToTopButton, setShowToTopButton] = useState(false);
@@ -238,6 +241,29 @@ function App() {
           <Scrolldown />
         </div>
       </section>
+      <section id="shortbio">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+        >
+          <AnimatedSVG />
+          <motion.div>
+            <motion.p>A BIT ABOUT ME</motion.p>
+            <motion.p>
+              I'm a Computer Programming and Analysis student at George Brown
+              College with a passion for backend development, software
+              engineering, and self-taught UX/UI design. I thrive on
+              problem-solving and continuously expanding my knowledge. My
+              philosophy is to embrace challenges, learn from failures, and stay
+              curious. Like a tree, I keep growing through every season,
+              striving until I can taste the fruits of my hard work.
+            </motion.p>
+            <motion.p>Let’s not stop here—scroll for more!</motion.p>
+          </motion.div>
+        </motion.div>
+      </section>
       <section id="expertise">
         <div
           style={{
@@ -333,7 +359,20 @@ function App() {
               gap: "2px",
             }}
           >
-            Intrigued? My resume holds the details
+            Intrigued? My&nbsp;
+            <motion.span
+              style={{
+                display: "inline-block",
+                background: "var(--linearPrimaryAccent)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontSize: "inherit",
+                userSelect: "none",
+              }}
+            >
+              resume
+            </motion.span>
+            &nbsp;holds the details
           </motion.h2>
           <motion.button
             whileHover={{
@@ -447,21 +486,41 @@ function App() {
             </Button>
           </div>
         </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            scale: { type: "spring", bounce: 0.5 },
+          }}
+          style={{
+            textAlign: "center",
+            marginTop: "2rem",
+            fontSize: "1rem",
+          }}
+        >
+          {" "}
+          <svg width="16" height="16" fill="currentColor">
+            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
+          </svg>{" "}
+          2025 Thanh Vu Le
+        </motion.p>
       </section>
-      <motion.div
+      <Button
+        variant="secondary"
+        onClick={scrollToTop}
+        className="totop-button"
         initial={{ opacity: 0 }}
         animate={{ opacity: showToTopButton ? 1 : 0 }}
         transition={{ duration: 0.5 }}
-        style={{ position: "sticky", bottom: "20px", right: "20px" }}
+        style={{
+          position: "sticky",
+          bottom: "20px",
+          transform: "translateX(90vw) translateY(1vh)",
+        }}
       >
-        <Button
-          variant="secondary"
-          onClick={scrollToTop}
-          className="totop-button"
-        >
-          <FaArrowUp color={isDarkMode ? "black" : "white"} />
-        </Button>
-      </motion.div>
+        <FaArrowUp color={isDarkMode ? "black" : "white"} />
+      </Button>
       <Pointer />
     </div>
   );
