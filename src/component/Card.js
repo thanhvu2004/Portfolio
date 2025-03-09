@@ -1,4 +1,4 @@
-import "./css/card.css";
+import "../css/card.css";
 import * as motion from "motion/react-client";
 
 export default function ScrollTriggered() {
@@ -17,7 +17,7 @@ function Card({ title, description }) {
       style={cardContainer}
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ amount: 0.8 }}
+      viewport={{ amount: 0.5 }}
       transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
     >
       <motion.div style={card} whileHover={{ scale: 1.1 }}>

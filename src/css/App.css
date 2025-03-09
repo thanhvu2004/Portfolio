@@ -59,8 +59,23 @@ h1 {
   height: 50px; /* Half the original height */
 }
 
+#shortbio {
+  height: 100vh;
+}
+
+#shortbio > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
 #expertise {
-  height: 50vh;
+  height: 90vh;
+
 }
 /* experience */
 #projects {

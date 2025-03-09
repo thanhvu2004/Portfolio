@@ -1,6 +1,6 @@
 import { frame, motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import "./css/colors.css";
+import "../css/colors.css";
 
 export default function Drag() {
   const ref = useRef(null);
@@ -101,7 +101,7 @@ const ballStyle = {
 const backBallStyle = {
   width: 200,
   height: 200,
-  backgroundColor: "var(--fill-color)",
+  backgroundColor: "white",
   borderRadius: "50%",
   position: "absolute",
   pointerEvents: "none",

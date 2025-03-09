@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as motion from "motion/react-client";
-import "./css/Projects.css"; // Create and import a CSS file for styling
+import "../css/Projects.css"; // Create and import a CSS file for styling
 
 const projectData = [
   {
@@ -75,7 +75,7 @@ export default function Projects() {
   };
 
   const images = importAll(
-    require.context("./assets", false, /\.(png|jpe?g|svg)$/)
+    require.context("../assets", false, /\.(png|jpe?g|svg)$/)
   );
 
   return (
