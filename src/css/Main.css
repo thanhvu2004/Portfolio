@@ -59,6 +59,12 @@ h1 {
   height: 50px; /* Half the original height */
 }
 
+@media (max-width: 768px) {
+  .custom-pointer {
+    display: none;
+  }
+}
+
 #shortbio {
   height: 100vh;
 }
