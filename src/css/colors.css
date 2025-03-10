@@ -6,6 +6,7 @@
   --accent: #de6868;
   --stroke-color: #000000;
   --fill-color: #000000;
+  --fill-color-opacity: rgba(0, 0, 0, 0.1);
   --linearPrimarySecondary: linear-gradient(#f07000, #5c5542);
   --linearPrimaryAccent: linear-gradient(#f07000, #972121);
   --linearSecondaryAccent: linear-gradient(#5c5542, #972121);
@@ -22,4 +23,5 @@
   --accent: #972121;
   --stroke-color: #ffffff;
   --fill-color: #ffffff;
+  --fill-color-opacity: rgba(255, 255, 255, 0.1);
 }

@@ -1,0 +1,26 @@
+.scroll-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    box-shadow: 0 1px 10px var(--fill-color-opacity);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .scroll-menu h3 {
+    margin: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .scroll-menu h3.active {
+    color: var(--primary);
+    font-weight: bold;
+  }

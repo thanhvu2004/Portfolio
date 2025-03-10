@@ -48,7 +48,7 @@ const cardContainer = {
 const card = {
   width: 300,
   height: 300,
-  background: "var(--secondary)",
+  background: "var(--background)",
   opacity: 0.9,
   color: "var(--text)",
   borderRadius: 20,

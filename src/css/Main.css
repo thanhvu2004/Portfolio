@@ -79,10 +79,36 @@ h1 {
   margin: 2rem;
 }
 
+/* expertise */
 #expertise {
   height: 90vh;
-
 }
+
+.section-with-background-opacity {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.section-with-background-opacity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  opacity: 0.6;
+  z-index: -1;
+}
+
 /* experience */
 #projects {
   height: 100vh;

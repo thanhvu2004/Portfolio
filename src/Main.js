@@ -8,6 +8,7 @@ import Scrolldown from "./component/ScrollDown";
 import Projects from "./component/Projects";
 import AnimatedSVG from "./component/AnimatedWave";
 import NavigateButton from "./component/NavigateButton";
+import ScrollMenu from "./component/SrollMenu";
 import vnFlag from "./assets/vn.png";
 import caFlag from "./assets/ca.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -38,7 +39,12 @@ function Main() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const currentTheme = localStorage.getItem("theme") || "light";
+    const currentTheme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
     document.documentElement.setAttribute("data-theme", currentTheme);
     setIsDarkMode(currentTheme === "dark");
   }, []);
@@ -242,6 +248,7 @@ function Main() {
           <Scrolldown />
         </div>
       </section>
+      <ScrollMenu />
       <section id="shortbio">
         <motion.div
           ref={ref}
@@ -306,18 +313,7 @@ function Main() {
         </motion.div>
       </section>
       <section id="expertise">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            marginTop: "auto",
-            marginBottom: "auto",
-            flexDirection: "column",
-          }}
-        >
-          {" "}
+        <div className="section-with-background-opacity">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -328,7 +324,7 @@ function Main() {
               textAlign: "center",
             }}
           >
-            My Expertise{""}
+            My Expertise
             <span style={{ color: "var(--primary)" }}>.</span>
           </motion.h1>
           <Card />
