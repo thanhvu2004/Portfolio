@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../css/ScrollMenu.css";
 
 const sections = [
-  { id: "shortbio", label: "<Short Bio />" },
+  { id: "shortbio", label: "<ShortBio />" },
   { id: "expertise", label: "<Expertise />" },
   { id: "projects", label: "<Projects />" },
-  { id: "learnmore", label: "<Learn More />" },
+  { id: "learnmore", label: "<LearnMore />" },
 ];
 
 export default function ScrollMenu() {
@@ -77,13 +77,15 @@ export default function ScrollMenu() {
           transition={{ duration: 1 }}
         >
           {sections.map((section) => (
-            <h3
+            <motion.h3
               key={section.id}
               className={activeSection === section.id ? "active" : ""}
               onClick={() => handleScrollToSection(section.id)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               {section.label}
-            </h3>
+            </motion.h3>
           ))}
         </motion.div>
       )}

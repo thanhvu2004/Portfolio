@@ -8,9 +8,10 @@ import "../css/Projects.css"; // Create and import a CSS file for styling
 const projectData = [
   {
     id: 1,
-    name: "Project 1",
-    description: "Description for Project 1",
-    images: ["image1a.png", "image1b.png"],
+    name: "Image Gallery",
+    description:
+      "This is my personal image gallery project, created in 2022 when I started learning web development. As a beginner, I jumped right into coding, enjoying the experience without overthinking it. Through this process, I gained skills in Bootstrap, CSS, PHP, SQL, and more. After finishing the project, I explored web hosting and Cloudflare to host and secure my website locally. This project marked a significant milestone in my web development journey, and I'm proud of the progress I've made.",
+    images: ["image1a.png", "image1b.png", "image1c.png", "image1d.png"],
     link: "https://example.com/project1",
   },
   {
