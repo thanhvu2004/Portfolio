@@ -12,13 +12,14 @@ const projectData = [
     description:
       "This is my personal image gallery project, created in 2022 when I started learning web development. As a beginner, I jumped right into coding, enjoying the experience without overthinking it. Through this process, I gained skills in Bootstrap, CSS, PHP, SQL, and more. After finishing the project, I explored web hosting and Cloudflare to host and secure my website locally. This project marked a significant milestone in my web development journey, and I'm proud of the progress I've made.",
     images: ["image1a.png", "image1b.png", "image1c.png", "image1d.png"],
-    link: "https://example.com/project1",
+    link: "https://thanhvugallery.me",
   },
   {
     id: 2,
-    name: "Project 2",
-    description: "Description for Project 2",
-    images: ["image2a.png", "image2b.png"],
+    name: "PlanIt",
+    description:
+      "PlanIt is a user-friendly, collaborative online scheduling platform aimed at simplifying the process of organizing meetings and events. It allows multiple users to input their availability, automatically identifying the most suitable time for all participants. With features like real-time updates and time zone management, PlanIt eliminates the need for back-and-forth communication, helping teams and groups coordinate effortlessly.",
+    images: ["image2a.png", "image2b.png", "image2c.png", "image2d.png", "image2e.png"],
     link: "https://example.com/project2",
   },
   {
@@ -127,13 +128,43 @@ export default function Projects() {
             <p>{selectedProject.description}</p>
           </Modal.Body>
           <Modal.Footer className="custom-modal-footer">
-            <Button
-              variant="outline-danger"
+            <a
               href={selectedProject.link}
               target="_blank"
+              style={{ textDecoration: "none" }}
             >
-              View Site
-            </Button>
+              <motion.button
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [5, -5, 0],
+                  backgroundColor: "var(--primary)",
+                  transition: { duration: 0.3 },
+                }}
+                style={{
+                  border: "none",
+                  padding: "0.5rem 1rem",
+                  marginTop: "1rem",
+                  cursor: "pointer",
+                  borderRadius: "5px",
+                  backgroundColor: "var(--text)",
+                  color: "var(--background)",
+                  fontSize: "1.5rem",
+                  boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                }}
+              >
+                Take a Look
+                <svg
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  style={{ marginLeft: "1rem", marginBottom: "0.5rem" }}
+                >
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                </svg>
+              </motion.button>
+            </a>
           </Modal.Footer>
         </Modal>
       )}
