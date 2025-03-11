@@ -506,6 +506,51 @@ export default function PersonalData() {
               </p>
             </div>
           </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "left",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <h2 style={{ minWidth: "fit-content", marginBottom: "0" }}>
+              Extracurricular Activities
+            </h2>
+            <motion.div
+              style={{
+                height: "4px",
+                backgroundColor: "var(--primary)",
+                width: "100%",
+                borderRadius: "3px",
+                marginTop: "auto",
+              }}
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 2 }}
+            ></motion.div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <p
+              style={{
+                fontWeight: "bold",
+                width: "150px",
+                minWidth: "150px",
+                height: "24px",
+              }}
+            >
+              2020 - 2022
+            </p>
+            <p style={{ textAlign: "left", flex: 1 }}>
+              President, FPT High School Robotics Club FRITS
+            </p>
+          </div>
         </div>
       </div>
       <PersonalSection />
