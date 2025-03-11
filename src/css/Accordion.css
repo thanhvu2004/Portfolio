@@ -1,0 +1,58 @@
+.custom-accordion {
+    width: 100%;
+    background-color: unset;
+    border: none; /* Ensure the border is removed */
+}
+
+.custom-accordion-item {
+    background-color: unset;
+    border: none; /* Ensure the border is removed */
+}
+
+.custom-accordion-item > * {
+    color: var(--text);
+}
+
+.custom-accordion .accordion-header {
+    background-color: unset;
+    border: none;
+}
+
+.custom-accordion .accordion-button {
+    background-color: unset;
+    color: var(--text);
+    border: none;
+    box-shadow: none;
+    padding: 1rem 0;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: unset;
+    color: var(--text);
+    border: none;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-body {
+    background-color: unset;
+    color: var(--text);
+    border: none;
+    padding: 0;
+}
+
+/* Change the color of the down arrow button */
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23f07000' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}

@@ -1,5 +1,5 @@
 import { frame, motion, useMotionValue, useSpring } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import "../css/colors.css";
 
 export default function Drag() {
@@ -38,27 +38,30 @@ function useFollowPointer(ref) {
   const x1 = useSpring(x1Point, springConfig);
   const y1 = useSpring(y1Point, springConfig);
 
-  const updatePosition = (clientX, clientY) => {
-    if (!ref.current) return;
-    const element = ref.current;
+  const updatePosition = useCallback(
+    (clientX, clientY) => {
+      if (!ref.current) return;
+      const element = ref.current;
 
-    frame.read(() => {
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-      xPoint.set(
-        clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX - 20
-      );
-      yPoint.set(
-        clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
-      );
-      x1Point.set(
-        clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
-      );
-      y1Point.set(
-        clientY - element.offsetTop - element.offsetHeight / 2 - 90 + scrollY
-      );
-    });
-  };
+      frame.read(() => {
+        const scrollX = window.scrollX;
+        const scrollY = window.scrollY;
+        xPoint.set(
+          clientX - element.offsetLeft - element.offsetWidth / 2 + scrollX - 20
+        );
+        yPoint.set(
+          clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
+        );
+        x1Point.set(
+          clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
+        );
+        y1Point.set(
+          clientY - element.offsetTop - element.offsetHeight / 2 - 90 + scrollY
+        );
+      });
+    },
+    [ref, xPoint, yPoint, x1Point, y1Point]
+  );
 
   useEffect(() => {
     if (!ref.current) return;
@@ -83,7 +86,7 @@ function useFollowPointer(ref) {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [ref, xPoint, yPoint, x1Point, y1Point]);
+  }, [ref, updatePosition]);
 
   return { x, y, x1, y1 };
 }

@@ -3,7 +3,7 @@ body {
   color: var(--text) !important;
 }
 
-.App {
+.App, .personal-data-container {
  margin: 20px;
 }
 
