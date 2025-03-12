@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as motion from "motion/react-client";
@@ -18,37 +18,23 @@ const projectData = [
     id: 2,
     name: "PlanIt",
     description:
-      "PlanIt is a user-friendly, collaborative online scheduling platform aimed at simplifying the process of organizing meetings and events. It allows multiple users to input their availability, automatically identifying the most suitable time for all participants. With features like real-time updates and time zone management, PlanIt eliminates the need for back-and-forth communication, helping teams and groups coordinate effortlessly.",
-    images: ["image2a.png", "image2b.png", "image2c.png", "image2d.png", "image2e.png"],
-    link: "https://example.com/project2",
+      "PlanIt is a user-friendly, collaborative online scheduling platform aimed at simplifying the process of organizing meetings and events. It allows multiple users to input their availability, automatically identifying the most suitable time for all participants. With features like real-time updates and time zone management, PlanIt eliminates the need for back-and-forth communication, helping teams and groups coordinate effortlessly. Coded using Node.js, Express, and MongoDB for Capstone class.",
+    images: [
+      "image2a.png",
+      "image2b.png",
+      "image2c.png",
+      "image2d.png",
+      "image2e.png",
+    ],
+    link: "https://github.com/thanhvu2004/COMP3078_Capstone_PlanIt",
   },
   {
     id: 3,
-    name: "Project 3",
-    description: "Description for Project 3",
-    images: ["image3a.png", "image3b.png"],
-    link: "https://example.com/project3",
-  },
-  {
-    id: 4,
-    name: "Project 4",
-    description: "Description for Project 4",
-    images: ["image4a.png", "image4b.png"],
-    link: "https://example.com/project4",
-  },
-  {
-    id: 5,
-    name: "Project 5",
-    description: "Description for Project 5",
-    images: ["image5a.png", "image5b.png"],
-    link: "https://example.com/project5",
-  },
-  {
-    id: 6,
-    name: "Project 6",
-    description: "Description for Project 6",
-    images: ["image6a.png", "image6b.png"],
-    link: "https://example.com/project6",
+    name: "To-Do App",
+    description:
+      "A simple to-do app that helps users organize their tasks and manage their time effectively. Users can create, edit, and delete tasks, as well as mark them as complete. The app also features a search function, allowing users to filter tasks by keyword. With a clean and intuitive interface, the to-do app is designed to enhance productivity and streamline task management. Coded using Xcode and Swift for Mobile Application Development class.",
+    images: ["image3a.png", "image3b.png", "image3c.png", "image3d.png"],
+    link: "https://github.com/thanhvu2004/COMP3097-G10-ToDoApp",
   },
 ];
 
@@ -70,7 +56,7 @@ export default function Projects() {
 
   const importAll = (r) => {
     let images = {};
-    r.keys().map((item, index) => {
+    r.keys().forEach((item) => {
       images[item.replace("./", "")] = r(item);
     });
     return images;
@@ -131,6 +117,7 @@ export default function Projects() {
             <a
               href={selectedProject.link}
               target="_blank"
+              rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
               <motion.button
