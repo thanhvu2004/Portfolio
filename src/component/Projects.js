@@ -9,6 +9,7 @@ const projectData = [
   {
     id: 1,
     name: "Image Gallery",
+    codingLanguges: "HTML, CSS, PHP, SQL",
     description:
       "This is my personal image gallery project, created in 2022 when I started learning web development. As a beginner, I jumped right into coding, enjoying the experience without overthinking it. Through this process, I gained skills in Bootstrap, CSS, PHP, SQL, and more. After finishing the project, I explored web hosting and Cloudflare to host and secure my website locally. This project marked a significant milestone in my web development journey, and I'm proud of the progress I've made.",
     images: ["image1a.png", "image1b.png", "image1c.png", "image1d.png"],
@@ -17,6 +18,7 @@ const projectData = [
   {
     id: 2,
     name: "PlanIt",
+    codingLanguges: "Node.js, React, MongoDB",
     description:
       "PlanIt is a user-friendly, collaborative online scheduling platform aimed at simplifying the process of organizing meetings and events. It allows multiple users to input their availability, automatically identifying the most suitable time for all participants. With features like real-time updates and time zone management, PlanIt eliminates the need for back-and-forth communication, helping teams and groups coordinate effortlessly. Coded using Node.js, Express, and MongoDB for Capstone class.",
     images: [
@@ -26,14 +28,19 @@ const projectData = [
       "image2d.png",
       "image2e.png",
     ],
+    relatedDocuments:
+      "https://drive.google.com/drive/folders/1cVyf7IUDcdsIUQQnJovCzJJBJOQATAaV?usp=drive_link",
     link: "https://github.com/thanhvu2004/COMP3078_Capstone_PlanIt",
   },
   {
     id: 3,
     name: "To-Do App",
+    codingLanguges: "Swift",
     description:
       "A simple to-do app that helps users organize their tasks and manage their time effectively. Users can create, edit, and delete tasks, as well as mark them as complete. The app also features a search function, allowing users to filter tasks by keyword. With a clean and intuitive interface, the to-do app is designed to enhance productivity and streamline task management. Coded using Xcode and Swift for Mobile Application Development class.",
     images: ["image3a.png", "image3b.png", "image3c.png", "image3d.png"],
+    relatedDocuments:
+      "https://drive.google.com/drive/folders/14NwieUdLtoO3jdEFf2KlCgv4HB4bPNlN?usp=drive_link",
     link: "https://github.com/thanhvu2004/COMP3097-G10-ToDoApp",
   },
 ];
@@ -111,9 +118,41 @@ export default function Projects() {
                 </div>
               ))}
             </Carousel>
+            <h4>Coding Languages: {selectedProject.codingLanguges}</h4>
             <p>{selectedProject.description}</p>
           </Modal.Body>
           <Modal.Footer className="custom-modal-footer">
+            {selectedProject.relatedDocuments && (
+              <a
+                href={selectedProject.relatedDocuments}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <motion.button
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: [5, -5, 0],
+                    backgroundColor: "var(--primary)",
+                    transition: { duration: 0.3 },
+                  }}
+                  style={{
+                    border: "none",
+                    padding: "0.5rem 1rem",
+                    marginTop: "1rem",
+                    marginRight: "1rem",
+                    cursor: "pointer",
+                    borderRadius: "5px",
+                    backgroundColor: "var(--text)",
+                    color: "var(--background)",
+                    fontSize: "1.5rem",
+                    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  Related Documents
+                </motion.button>
+              </a>
+            )}
             <a
               href={selectedProject.link}
               target="_blank"
@@ -133,7 +172,7 @@ export default function Projects() {
                   marginTop: "1rem",
                   cursor: "pointer",
                   borderRadius: "5px",
-                  backgroundColor: "var(--text)",
+                  backgroundColor: "var(--primary)",
                   color: "var(--background)",
                   fontSize: "1.5rem",
                   boxShadow: "0 0 10px rgba(0,0,0,0.1)",

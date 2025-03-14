@@ -1,6 +1,6 @@
 .card-title {
     position: relative;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     z-index: 1;
 }
@@ -18,6 +18,27 @@
 }
 
 .card-detail {
-    margin: auto 0 auto 0;
+    margin: 1.5rem 0 auto 0;
     padding-left: 10px;
+    font-size: 1rem;
+}
+
+@media (min-width: 341px) {
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-detail {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 2048px) {
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    .card-detail {
+        font-size: 1.5rem;
+    }
 }

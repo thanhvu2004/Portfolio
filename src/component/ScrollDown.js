@@ -36,39 +36,78 @@ const loopDraw = {
 
 export default function Scrolldown() {
   return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 11 21"
-      width="50"
-      height="100"
-      initial="hidden"
-      animate="visible"
-      style={image}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "fit",
+        color: "var(--text-color)",
+      }}
     >
-      <motion.rect
-        x="0.5"
-        y="0.5"
-        width="10"
-        height="20"
-        rx="5"
-        ry="5"
-        stroke="var(--stroke-color)"
-        fill="none"
-        strokeMiterlimit="10"
-        variants={draw}
-        custom={1}
-        style={shape}
-      />
-      <motion.polyline
-        points="6.27 4.52 6.27 9.23 3.71 10.88 6.27 12.55 6.27 15.55 4.05 13.66"
-        stroke="var(--stroke-color)"
-        fill="none"
-        strokeMiterlimit="10"
-        variants={loopDraw}
-        custom={2}
-        style={shape}
-      />
-    </motion.svg>
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 11 21"
+        width="50"
+        height="100"
+        initial="hidden"
+        animate="visible"
+        style={image}
+      >
+        <motion.rect
+          x="0.5"
+          y="0.5"
+          width="10"
+          height="20"
+          rx="5"
+          ry="5"
+          stroke="var(--stroke-color)"
+          fill="none"
+          strokeMiterlimit="10"
+          variants={draw}
+          custom={1}
+          style={shape}
+        />
+        <motion.polyline
+          points="6.27 4.52 6.27 9.23 3.71 10.88 6.27 12.55 6.27 15.55 4.05 13.66"
+          stroke="var(--stroke-color)"
+          fill="none"
+          strokeMiterlimit="10"
+          variants={loopDraw}
+          custom={2}
+          style={shape}
+        />
+      </motion.svg>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "fit",
+          color: "var(--text-color)",
+          marginLeft: "0.5rem",
+        }}
+      >
+        <motion.p
+          style={{ margin: "0" }}
+          initial={{ y: 10 }}
+          animate={{ y: [10, -10, 10] }}
+          transition={{ duration: 1.25, repeat: 5 }}
+        >
+          Scroll
+        </motion.p>
+        <motion.p
+          style={{ margin: "0 0 0.75rem 1rem" }}
+          initial={{ y: 10 }}
+          animate={{ y: [10, -10, 10] }}
+          transition={{ duration: 1.25, repeat: 5, delay: 0.1 }}
+        >
+          Down
+        </motion.p>
+      </div>
+    </div>
   );
 }
 

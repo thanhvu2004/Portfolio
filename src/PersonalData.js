@@ -6,6 +6,7 @@ import Pointer from "./component/Pointer";
 import PersonalSection from "./component/Social";
 import me from "./assets/me2.JPG";
 import "./css/Accordion.css";
+import pdfFile from "./assets/Conor_Le_Resume.pdf";
 
 export default function PersonalData() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -63,6 +64,7 @@ export default function PersonalData() {
           margin: "0 auto",
           padding: "2rem",
           gap: "2rem",
+          maxWidth: "95%",
         }}
       >
         <div
@@ -103,6 +105,38 @@ export default function PersonalData() {
             </motion.div>
             !
           </h2>
+          <motion.button
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = pdfFile;
+              link.download = "ConorLeResume.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "var(--primary)",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+              marginTop: "1rem",
+            }}
+            whileHover={{
+              scale: 1.1,
+              rotate: [5, -5, 0],
+              backgroundColor: "var(--text)",
+              color: "var(--background)",
+              transition: { duration: 0.3 },
+            }}
+          >
+            Download PDF{" "}
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+            </svg>
+          </motion.button>
         </div>
         <div className="rightSide">
           <h2>

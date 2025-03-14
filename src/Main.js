@@ -175,14 +175,14 @@ function Main() {
           <motion.div>
             <motion.p
               style={{
-                fontSize: "1.5rem",
                 color: "var(--text)",
                 fontWeight: "bold",
               }}
+              className="responsive-text"
             >
               A BIT ABOUT ME<span style={{ color: "var(--primary)" }}>.</span>
             </motion.p>
-            <motion.p>
+            <motion.p className="responsive-text">
               I'm a Computer Programming and Analysis student at George Brown
               College with a passion for backend development, software
               engineering, and self-taught UX/UI design. I thrive on
@@ -191,7 +191,7 @@ function Main() {
               curious. Like a tree, I keep growing through every season,
               striving until I can taste the fruits of my hard work.
             </motion.p>
-            <motion.p>
+            <motion.p className="responsive-text">
               Let’s not stop here—scroll for more!{" "}
               <motion.svg
                 width="16"
@@ -268,7 +268,7 @@ function Main() {
               textAlign: "center",
             }}
           >
-            Past Projects{""}
+            My Projects{""}
             <span style={{ color: "var(--primary)" }}>.</span>
           </motion.h1>
           <motion.p
@@ -281,7 +281,7 @@ function Main() {
               textAlign: "center",
             }}
           >
-            Here are some of my past projects I've worked on. Want to see more?
+            Here are some of my projects I've worked on. Want to see more?
             Here's my{" "}
             <a
               href="https://github.com/thanhvu2004"

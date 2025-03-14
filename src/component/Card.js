@@ -33,11 +33,10 @@ const container = {
   justifyContent: "space-around",
   alignItems: "center",
   margin: "0 auto",
-  maxWidth: "960px",
+  maxWidth: "95%",
 };
 
 const cardContainer = {
-  overflow: "hidden",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -46,8 +45,8 @@ const cardContainer = {
 };
 
 const card = {
-  width: 300,
-  height: 300,
+  width: "100%",
+  height: "fit-content",
   background: "var(--background)",
   opacity: 0.9,
   color: "var(--text)",
@@ -57,6 +56,7 @@ const card = {
   flexDirection: "column",
   alignItems: "center",
   padding: 20,
+  paddingBottom: 40,
 };
 
 const data = [
