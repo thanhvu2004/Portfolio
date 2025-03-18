@@ -3,7 +3,7 @@ import * as motion from "motion/react-client";
 
 export default function ScrollTriggered() {
   return (
-    <div style={container}>
+    <div style={container} className="card-container">
       {data.map(({ title, description }, i) => (
         <Card key={i} title={title} description={description} />
       ))}

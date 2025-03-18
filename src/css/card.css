@@ -22,7 +22,18 @@
     padding-left: 10px;
     font-size: 1rem;
 }
+@media only screen and (max-device-width: 480px) {
+    .card-title {
+        font-size: 1.2rem !important;
+    }
 
+    .card-detail {
+        font-size: 0.8rem !important;
+    }
+    .card-container {
+        flex-direction: column !important;
+    }
+}
 @media (min-width: 341px) {
     .card-title {
         font-size: 1.5rem;

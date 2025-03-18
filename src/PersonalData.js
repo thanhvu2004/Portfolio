@@ -109,7 +109,7 @@ export default function PersonalData() {
             onClick={() => {
               const link = document.createElement("a");
               link.href = pdfFile;
-              link.download = "ConorLeResume.pdf";
+              link.setAttribute("download", "ConorLeResume.pdf");
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);

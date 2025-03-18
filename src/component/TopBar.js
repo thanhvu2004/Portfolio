@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function TopBar({ isDarkMode, toggleTheme, showFirstName, handleTap, rotate }) {
+  const [hoverText, setHoverText] = useState("Le Thanh Vu");
+
   return (
     <div className="container">
       <div className="logo-container">
@@ -89,8 +92,11 @@ function TopBar({ isDarkMode, toggleTheme, showFirstName, handleTap, rotate }) {
               scale: { type: "spring", visualDuration: 0.5, bounce: 0.5 },
             }}
             style={{ userSelect: "none", color: "var(--text)" }}
+            onMouseEnter={() => setHoverText("Home")}
+            onMouseLeave={() => setHoverText("Le Thanh Vu")}
           >
-            {"<Le Thanh Vu"}
+            {"<"}
+            {hoverText}
             <span style={{ color: "var(--primary)" }}>{" /"}</span>
             {">"}
           </motion.h1>

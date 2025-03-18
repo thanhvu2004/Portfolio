@@ -33,3 +33,9 @@
   color: var(--primary);
   font-weight: bold;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .scroll-menu h3 {
+    font-size: 1rem;
+  }
+}

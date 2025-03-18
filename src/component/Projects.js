@@ -18,7 +18,7 @@ const projectData = [
   {
     id: 2,
     name: "PlanIt",
-    codingLanguges: "Node.js, React, MongoDB",
+    codingLanguges: "JavaScript (Node.js, React), MongoDB",
     description:
       "PlanIt is a user-friendly, collaborative online scheduling platform aimed at simplifying the process of organizing meetings and events. It allows multiple users to input their availability, automatically identifying the most suitable time for all participants. With features like real-time updates and time zone management, PlanIt eliminates the need for back-and-forth communication, helping teams and groups coordinate effortlessly. Coded using Node.js, Express, and MongoDB for Capstone class.",
     images: [
@@ -42,6 +42,29 @@ const projectData = [
     relatedDocuments:
       "https://drive.google.com/drive/folders/14NwieUdLtoO3jdEFf2KlCgv4HB4bPNlN?usp=drive_link",
     link: "https://github.com/thanhvu2004/COMP3097-G10-ToDoApp",
+  },
+  {
+    id: 4,
+    name: "Employee Management System",
+    codingLanguages:
+      "JavaScript (React, Node.js, Express), MongoDB, Dockerfile",
+    description:
+      "This project is an Employee Management Application built with React for the frontend and Node.js/Express for the backend. It allows users to manage employee data, including creating, editing, viewing, and deleting employee records. The application also features a search function, enabling users to filter employees by department, and/or position. With a clean and user-friendly interface, the Employee Management System is designed to streamline HR processes and enhance efficiency.",
+    images: ["image4a.png", "image4b.png", "image4c.png"],
+    relatedDocuments:
+      "https://github.com/thanhvu2004/COMP3123_EmployeeManagementApp/blob/master/README.md",
+    link: "https://github.com/thanhvu2004/COMP3123_EmployeeManagementApp",
+  },
+  {
+    id: 5,
+    name: "Connect 4 Game",
+    codingLanguages: "Java",
+    description:
+      "This project is a Connect 4 game built with Java. It allows two players to take turns dropping colored discs from the top into a grid or let you play with an AI. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. The Ai of the game is implemented using the Minimax algorithm with Alpha-Beta pruning. Coming soon with a GUI version.",
+    images: ["image5a.png"],
+    relatedDocuments:
+      "https://github.com/thanhvu2004/Connect4minimaxGame/blob/master/src/ai/img.png",
+    link: "https://github.com/thanhvu2004/Connect4minimaxGame",
   },
 ];
 

@@ -236,6 +236,7 @@ function Main() {
             style={{
               fontSize: "3rem",
               marginBottom: "2rem",
+              marginTop: "2rem",
               textAlign: "center",
             }}
           >
@@ -276,10 +277,10 @@ function Main() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
             style={{
-              fontSize: "1.5rem",
               marginBottom: "2rem",
               textAlign: "center",
             }}
+            className="responsive-text"
           >
             Here are some of my projects I've worked on. Want to see more?
             Here's my{" "}

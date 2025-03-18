@@ -77,3 +77,13 @@
   object-fit: contain;
   border-radius: 10px;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .project-card {
+    width: 45%;
+  }
+
+  .project-title-overlay {
+    font-size: 0.8rem;
+  }
+}

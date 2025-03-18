@@ -4,25 +4,30 @@ import "../css/colors.css";
 
 export default function Drag() {
   const ref = useRef(null);
-  const { x, y, x1, y1 } = useFollowPointer(ref);
+  const { x, y } = useFollowPointer(ref);
   const [isTapped, setIsTapped] = useState(false);
 
+  // Check if the user is on a mobile device
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    return null; // Disable the pointer script on mobile
+  }
+
   return (
-    <>
-      <motion.div style={{ ...backBallStyle, x: x1, y: y1 }} />
-      <motion.div
-        ref={ref}
-        style={{
-          ...ballStyle,
-          x,
-          y,
-          pointerEvents: isTapped ? "auto" : "none",
-        }}
-        whileTap={{ scale: 1.5 }}
-        onTapStart={() => setIsTapped(true)}
-        onTap={() => setIsTapped(false)}
-      />
-    </>
+    <motion.div
+      ref={ref}
+      style={{
+        ...ballStyle,
+        x,
+        y,
+        pointerEvents: isTapped ? "auto" : "none",
+      }}
+      whileTap={{ scale: 1.5 }}
+      onTapStart={() => setIsTapped(true)}
+      onTap={() => setIsTapped(false)}
+      className="ball"
+    />
   );
 }
 
@@ -31,12 +36,8 @@ const springConfig = { damping: 90, stiffness: 5000, restDelta: 0.001 };
 function useFollowPointer(ref) {
   const xPoint = useMotionValue(0);
   const yPoint = useMotionValue(0);
-  const x1Point = useMotionValue(0);
-  const y1Point = useMotionValue(0);
   const x = useSpring(xPoint, springConfig);
   const y = useSpring(yPoint, springConfig);
-  const x1 = useSpring(x1Point, springConfig);
-  const y1 = useSpring(y1Point, springConfig);
 
   const updatePosition = useCallback(
     (clientX, clientY) => {
@@ -52,15 +53,9 @@ function useFollowPointer(ref) {
         yPoint.set(
           clientY - element.offsetTop - element.offsetHeight / 2 + scrollY - 20
         );
-        x1Point.set(
-          clientX - element.offsetLeft - element.offsetWidth / 2 - 90 + scrollX
-        );
-        y1Point.set(
-          clientY - element.offsetTop - element.offsetHeight / 2 - 90 + scrollY
-        );
       });
     },
-    [ref, xPoint, yPoint, x1Point, y1Point]
+    [ref, xPoint, yPoint]
   );
 
   useEffect(() => {
@@ -88,7 +83,7 @@ function useFollowPointer(ref) {
     };
   }, [ref, updatePosition]);
 
-  return { x, y, x1, y1 };
+  return { x, y };
 }
 
 const ballStyle = {
@@ -98,18 +93,6 @@ const ballStyle = {
   borderRadius: "50%",
   position: "absolute",
   zIndex: 1057,
-  //pointerEvents: "none",
-};
-
-const backBallStyle = {
-  width: 200,
-  height: 200,
-  backgroundColor: "white",
-  borderRadius: "50%",
-  position: "absolute",
-  pointerEvents: "none",
-  filter: "blur(200px)",
-  zIndex: -2,
 };
 
 document.body.style.cursor = "none";

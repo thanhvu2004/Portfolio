@@ -47,6 +47,57 @@ h1 {
   font-size: 4rem;
 }
 
+@media only screen and (max-device-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+  #Layer_2 {
+    width: 50px !important; /* Half the original width */
+    height: 50px !important; /* Half the original height */
+  }
+  h1 {
+    font-size: 2rem !important;
+  }
+  .text-container > a {
+    font-size: 1.5rem !important;
+  }
+  .text-container {
+    margin: 0 !important;
+  }
+  .theme-button {
+    width: 40px !important; /* Half the original width */
+    height: 40px !important; /* Half the original height */
+  }
+  h2 > span {
+    font-size: 1rem !important;
+  }
+  h2 {
+    font-size: 1rem !important;
+  }
+  .totop-button {
+    width: 40px !important; /* Half the original width */
+    height: 40px !important; /* Half the original height */
+    transform: translateX(83vw) translateY(1vh) !important;
+  }
+  #shortbio > div {
+    flex-direction: column !important;
+  }
+  .Resume {
+    flex-direction: column !important;
+  }
+  #expertise > div {
+    overflow: visible !important;
+  }
+  #expertise {
+    height: max-content !important;
+    margin-top: 2rem !important;
+  }
+  .custom-modal .modal-dialog {
+    max-width: 100%;
+  }
+  .modal-body > p{
+    font-size: 1rem !important; /* Smaller font size for mobile */
+  }
+}
+
 .scrolldown-container {
   display: flex;
   justify-content: center;
