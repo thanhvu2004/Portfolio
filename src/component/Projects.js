@@ -46,8 +46,7 @@ const projectData = [
   {
     id: 4,
     name: "Employee Management System",
-    codingLanguages:
-      "JavaScript (React, Node.js, Express), MongoDB, Dockerfile",
+    codingLanguges: "JavaScript (React, Node.js, Express), MongoDB, Dockerfile",
     description:
       "This project is an Employee Management Application built with React for the frontend and Node.js/Express for the backend. It allows users to manage employee data, including creating, editing, viewing, and deleting employee records. The application also features a search function, enabling users to filter employees by department, and/or position. With a clean and user-friendly interface, the Employee Management System is designed to streamline HR processes and enhance efficiency.",
     images: ["image4a.png", "image4b.png", "image4c.png"],
@@ -58,7 +57,7 @@ const projectData = [
   {
     id: 5,
     name: "Connect 4 Game",
-    codingLanguages: "Java and JavaFX",
+    codingLanguges: "Java and JavaFX",
     description:
       "This project is a Connect 4 game built with Java. It allows two players to take turns dropping colored discs from the top into a grid or let you play with an AI. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. The Ai of the game is implemented using the Minimax algorithm with Alpha-Beta pruning. The game features a user-friendly interface, allowing players to easily interact with the game board using JavaFX. The Connect 4 game is designed to provide an engaging and challenging experience for players of all ages.",
     images: ["image5a.png"],
