@@ -58,12 +58,12 @@ const projectData = [
   {
     id: 5,
     name: "Connect 4 Game",
-    codingLanguages: "Java",
+    codingLanguages: "Java and JavaFX",
     description:
-      "This project is a Connect 4 game built with Java. It allows two players to take turns dropping colored discs from the top into a grid or let you play with an AI. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. The Ai of the game is implemented using the Minimax algorithm with Alpha-Beta pruning. Coming soon with a GUI version.",
+      "This project is a Connect 4 game built with Java. It allows two players to take turns dropping colored discs from the top into a grid or let you play with an AI. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs. The Ai of the game is implemented using the Minimax algorithm with Alpha-Beta pruning. The game features a user-friendly interface, allowing players to easily interact with the game board using JavaFX. The Connect 4 game is designed to provide an engaging and challenging experience for players of all ages.",
     images: ["image5a.png"],
     relatedDocuments:
-      "https://github.com/thanhvu2004/Connect4minimaxGame/blob/master/src/ai/img.png",
+      "https://github.com/thanhvu2004/Connect4minimaxGame/blob/master/README.md",
     link: "https://github.com/thanhvu2004/Connect4minimaxGame",
   },
 ];
